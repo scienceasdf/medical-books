@@ -70,6 +70,8 @@
 \usepackage{caption}
 \usepackage{booktabs}
 \usepackage{tabularx}
+\usepackage{longtable}
+\usepackage[version=4]{mhchem}
 \renewcommand {\thetable} {\thechapter{}-\arabic{table}}
 \renewcommand {\thefigure} {\thechapter{}-\arabic{figure}}
 \newcommand{\chapterabstract}[1]{{\CJKfontspec{楷体} \small #1}}
@@ -103,9 +105,10 @@
 \tableofcontents
 \addcontentsline{toc}{chapter}{目录}
 }
+
 \input{content/intro.tex}
 \input{content/chap01.tex}
 \input{content/chap02.tex}
 \input{content/chap03.tex}
-
+\input{content/chap04.tex}
 \end{document}
