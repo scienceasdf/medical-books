@@ -3,7 +3,8 @@
 %
 \documentclass[
   12pt,
-  twoside]{ctexbook}
+  twoside,
+  banjiao]{ctexbook}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
@@ -12,9 +13,9 @@
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provides euro and other symbols
 \else % if luatex or xelatex
-  \usepackage{unicode-math}
-  \defaultfontfeatures{Scale=MatchLowercase}
-  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  %\usepackage{unicode-math}
+ \defaultfontfeatures{Scale=MatchLowercase}
+ \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -88,7 +89,6 @@
 \def\fps@figure{htbp}
 \makeatother
 
-\usepackage{ctex}
 \setCJKmainfont{思源宋体}
 \setCJKfallbackfamilyfont{\CJKrmdefault}{宋体}
 \setmainfont{思源宋体}
@@ -96,10 +96,33 @@
 \setlength{\parindent}{2em}
 \setlength{\parskip}{0em}
 
+\newfontfamily\apostrophefont[Ligatures=TeX]{Liberation Serif}
+\XeTeXinterchartokenstate=1
+\newXeTeXintercharclass \apostrophe
+
+% Assign the new class to all Latin capital letters
+\makeatletter
+\@tempcnta=`'
+\loop\unless\ifnum\@tempcnta>`'
+  \XeTeXcharclass \@tempcnta \apostrophe
+  \advance \@tempcnta by 1
+\repeat
+\makeatother
+
+% Setup font change
+\XeTeXinterchartoks 0 \apostrophe   = {\begingroup\apostrophefont}
+\XeTeXinterchartoks \apostrophe 0   = {\endgroup}
+\XeTeXinterchartoks 4095 \apostrophe = {\begingroup\apostrophefont}
+\XeTeXinterchartoks \apostrophe 4095 = {\endgroup}
+
+
+
+
 \title{病理学}
 \author{github \\ \url{https://github.com/scienceasdf/medical-books}}
 
 \begin{document}
+\maketitle
 {
 \setcounter{tocdepth}{1}
 \tableofcontents
