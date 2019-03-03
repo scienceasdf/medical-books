@@ -55,6 +55,7 @@
 
 \usepackage{ctex}
 \usepackage{rotating}
+\usepackage{multirow}
 \usepackage{tablefootnote}
 \setCJKmainfont{思源宋体}
 \setCJKfallbackfamilyfont{\CJKrmdefault}{宋体}
@@ -85,6 +86,7 @@
 
 \renewcommand {\thetable} {\thechapter{}-\arabic{table}}
 \renewcommand {\thefigure} {\thechapter{}-\arabic{figure}}
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}  
 
 \title{精神病学}
 \author{github \\ \url{https://github.com/scienceasdf/medical-books}}
@@ -116,4 +118,11 @@
 \input{content/chap15.tex}
 \input{content/chap16.tex}
 \input{content/chap17.tex}
+\input{content/chap18.tex}
+\input{content/chap19.tex}
+\input{content/chap20.tex}
+\input{content/chap21.tex}
+\input{content/chap22.tex}
+\appendix
+\input{content/appendix.tex}
 \end{document}
