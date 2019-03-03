@@ -10,7 +10,8 @@ Open sourece medical books in LaTeX. LaTeX写的中文开源医学教材.编译�
 LaTeX语言的语法并不是最简洁的，因此希望能够有大佬能够维护一个Markdown的仓库，与这个仓库互相完善互相补充。
 
 ## 完稿的教材
-可在https://github.com/scienceasdf/medical-books/releases页面下载。
+可在 https://github.com/scienceasdf/medical-books/releases 
+页面下载。
 * 精神病学
 
 ## 计划中的教材
