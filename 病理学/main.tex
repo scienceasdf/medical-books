@@ -42,7 +42,7 @@
   pdfauthor={github},
   pdfborder={0 0 0},
   breaklinks=true,
-  bookmarksdepth=3}
+  bookmarksdepth=4}
 \urlstyle{same}  % don't use monospace font for urls
 \usepackage{graphicx,grffile}
 \makeatletter
@@ -56,7 +56,7 @@
 %\setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-%\setcounter{secnumdepth}{-2}
+\setcounter{secnumdepth}{3}
 % Redefines (sub)paragraphs to behave more like sections
 \ifx\paragraph\undefined\else
   \let\oldparagraph\paragraph
@@ -77,6 +77,9 @@
 \renewcommand {\thefigure} {\thechapter{}-\arabic{figure}}
 \newcommand{\chapterabstract}[1]{{\CJKfontspec{楷体} \small #1}}
 \newcommand{\authorinfo}[1]{{\hspace*{\fill} #1}}
+\ctexset{
+  paragraph/runin=false
+}
 
 
 \newcommand{\mychapter}[1]{
@@ -135,6 +138,6 @@
 \input{content/chap03.tex}
 \input{content/chap04.tex}
 \input{content/chap05.tex}
-
+\input{content/chap06.tex}
 
 \end{document}
