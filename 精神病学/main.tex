@@ -1,0 +1,129 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  12pt,
+  twoside,
+  banjiao]{ctexbook}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+
+\usepackage{unicode-math}
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+
+\usepackage{xcolor}
+\usepackage{xurl} % add URL line breaks if available
+\usepackage{bookmark}
+\usepackage{hyperref}
+\hypersetup{
+  pdftitle={精神病学},
+  pdfauthor={github},
+  pdfborder={0 0 0},
+  breaklinks=true,
+  bookmarksdepth=4}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{longtable,booktabs}
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx,grffile}
+
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{ctex}
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage{tablefootnote}
+\setCJKmainfont{思源宋体}
+\setCJKfallbackfamilyfont{\CJKrmdefault}{宋体}
+\setmainfont{思源宋体}
+\usepackage[a4paper,top=1in, bottom=1in, left=0.8in, right=0.8in]{geometry}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0em}
+
+%\newfontfamily\apostrophefont[Ligatures=TeX,Color=FF0000]{Liberation Serif}
+\newfontfamily\apostrophefont[Ligatures=TeX]{Liberation Serif}
+\XeTeXinterchartokenstate=1
+\newXeTeXintercharclass \apostrophe
+
+% Assign the new class to all Latin capital letters
+\makeatletter
+\@tempcnta=`'
+\loop\unless\ifnum\@tempcnta>`'
+  \XeTeXcharclass \@tempcnta \apostrophe
+  \advance \@tempcnta by 1
+\repeat
+\makeatother
+
+% Setup font change
+\XeTeXinterchartoks 0 \apostrophe   = {\begingroup\apostrophefont}
+\XeTeXinterchartoks \apostrophe 0   = {\endgroup}
+\XeTeXinterchartoks 4095 \apostrophe = {\begingroup\apostrophefont}
+\XeTeXinterchartoks \apostrophe 4095 = {\endgroup}
+
+\renewcommand {\thetable} {\thechapter{}-\arabic{table}}
+\renewcommand {\thefigure} {\thechapter{}-\arabic{figure}}
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}  
+
+\title{精神病学}
+\author{github \\ 项目主页：\url{https://github.com/scienceasdf/medical-books}\\ 新书下载：\url{https://github.com/scienceasdf/medical-books/releases/latest}}
+
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+\addcontentsline{toc}{chapter}{目录}
+}
+\newpage
+
+\input{content/chap01.tex}
+\input{content/chap02.tex}
+\input{content/chap03.tex}
+\input{content/chap04.tex}
+\input{content/chap05.tex}
+\input{content/chap06.tex}
+\input{content/chap07.tex}
+\input{content/chap08.tex}
+\input{content/chap09.tex}
+\input{content/chap10.tex}
+\input{content/chap11.tex}
+\input{content/chap12.tex}
+\input{content/chap13.tex}
+\input{content/chap14.tex}
+\input{content/chap15.tex}
+\input{content/chap16.tex}
+\input{content/chap17.tex}
+\input{content/chap18.tex}
+\input{content/chap19.tex}
+\input{content/chap20.tex}
+\input{content/chap21.tex}
+\input{content/chap22.tex}
+\appendix
+\input{content/appendix.tex}
+\end{document}
