@@ -23,6 +23,7 @@
 \usepackage{xcolor}
 \usepackage{xurl} % add URL line breaks if available
 \usepackage{bookmark}
+\usepackage[version=4]{mhchem}
 \usepackage{hyperref}
 \usepackage{placeins}
 \hypersetup{
@@ -62,6 +63,7 @@
 \def\fps@figure{htbp}
 \makeatother
 
+\setcounter{secnumdepth}{5}
 \usepackage{framed}
 \usepackage{multirow}
 \usepackage{ctex}
@@ -97,6 +99,32 @@
 
 \renewcommand {\thetable} {\thechapter{}-\arabic{table}}
 \renewcommand {\thefigure} {\thechapter{}-\arabic{figure}}
+\newcommand\subsectiontitleformat[1]{\noindent 【#1】}
+
+\ctexset {
+  section = {
+    name
+    = {第,节},
+    number = \arabic{section},
+  },
+  subsection = {
+    name 
+    = {},
+    titleformat = \subsectiontitleformat,
+    number = {}
+  },
+  subsubsection = {
+    name 
+    = {,、},
+    number = \chinese{subsubsection}
+  },
+  paragraph = {
+    name
+    = {,.},
+    number = \arabic{paragraph},
+  }
+}
+
 
 \title{内科急诊学}
 \author{github \\ 项目主页：\url{https://github.com/scienceasdf/medical-books}\\ 新书下载：\url{https://github.com/scienceasdf/medical-books/releases/latest}}
@@ -104,7 +132,7 @@
 
 \begin{document}
 \maketitle
-
+\frontmatter
 {
 \setcounter{tocdepth}{0}
 \tableofcontents
@@ -112,6 +140,22 @@
 }
 \newpage
 
+\mainmatter
 \input{content/part01.tex}
-
+\input{content/part02.tex}
+\input{content/part03.tex}
+\input{content/part04.tex}
+\input{content/part05.tex}
+\input{content/part06.tex}
+\input{content/part07.tex}
+\input{content/part08.tex}
+\input{content/part09.tex}
+\input{content/part10.tex}
+\input{content/part11.tex}
+\input{content/part12.tex}
+\input{content/part13.tex}
+\input{content/part14.tex}
+\input{content/part15.tex}
+\input{content/part16.tex}
+\input{content/part17.tex}
 \end{document}
