@@ -1,0 +1,310 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  12pt,
+  twoside,
+  banjiao]{ctexbook}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+
+\usepackage{unicode-math}
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+
+\usepackage{xcolor}
+\usepackage{subfig}
+\usepackage{xurl} % add URL line breaks if available
+\usepackage{bookmark}
+\usepackage[version=4]{mhchem}
+\usepackage{hyperref}
+\usepackage{placeins}
+\hypersetup{
+  pdftitle={临床心电图详解与诊断},
+  pdfauthor={github},
+  pdfborder={0 0 0},
+  breaklinks=true,
+  bookmarksdepth=5}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{longtable,booktabs}
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\setcounter{secnumdepth}{5}
+\usepackage{framed}
+\usepackage{multirow}
+\usepackage{ctex}
+\usepackage{rotating}
+\usepackage{tablefootnote}
+\usepackage{caption}
+\setCJKmainfont{思源宋体}
+\setCJKfallbackfamilyfont{\CJKrmdefault}{宋体}
+\setmainfont{思源宋体}
+\usepackage[a4paper,top=1in, bottom=1in, left=0.8in, right=0.8in]{geometry}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0em}
+
+%\newfontfamily\apostrophefont[Ligatures=TeX,Color=FF0000]{Liberation Serif}
+\newfontfamily\apostrophefont[Ligatures=TeX]{Liberation Serif}
+\XeTeXinterchartokenstate=1
+\newXeTeXintercharclass \apostrophe
+
+% Assign the new class to all Latin capital letters
+\makeatletter
+\@tempcnta=`'
+\loop\unless\ifnum\@tempcnta>`'
+  \XeTeXcharclass \@tempcnta \apostrophe
+  \advance \@tempcnta by 1
+\repeat
+\makeatother
+
+% Setup font change
+\XeTeXinterchartoks 0 \apostrophe   = {\begingroup\apostrophefont}
+\XeTeXinterchartoks \apostrophe 0   = {\endgroup}
+\XeTeXinterchartoks 4095 \apostrophe = {\begingroup\apostrophefont}
+\XeTeXinterchartoks \apostrophe 4095 = {\endgroup}
+
+\renewcommand {\thetable} {\thechapter{}-\arabic{table}}
+\renewcommand {\thefigure} {\thechapter{}-\arabic{figure}}
+\newcommand\subsectiontitleformat[1]{\noindent 【#1】}
+
+\ctexset {
+  section = {
+    name
+    = {第,节},
+    number = \chinese{section},
+  },
+  subsubsection = {
+    name 
+    = {（,）},
+    number = \chinese{subsubsection}
+  },
+  subsection = {
+    name 
+    = {,、},
+    number = \chinese{subsection}
+  }
+}
+
+
+\title{临床心电图详解与诊断}
+\author{github \\ 项目主页：\url{https://github.com/scienceasdf/medical-books}\\ 新书下载：\url{https://github.com/scienceasdf/medical-books/releases/latest}}
+
+
+\begin{document}
+\maketitle
+\frontmatter
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+\addcontentsline{toc}{chapter}{目录}
+}
+\newpage
+
+\mainmatter
+\input{content/part01.tex}
+\input{content/part02.tex}
+\input{content/part03.tex}
+\input{content/part04.tex}
+
+\appendix
+\part{参考文献}
+
+1.郭继鸿。新概念心电图。第3版。北京：北京大学医学出版社，2007
+
+2.吴祥。心律失常梯形图解法。杭州：浙江大学出版社，2006
+
+3.黄宛。临床心电图学。第5版。北京：人民卫生出版社，2004
+
+4.陈新。黄宛临床心电图学。第6版。北京：人民卫生出版社，2009
+
+5.郭继鸿。心电图学。北京：人民卫生出版社，2002
+
+6.中国心电学会，中国心律学会编译。心电图标准化和解析的建议与临床应用国际指南2009。北京：中国环境科学出版社，2009
+
+7.吴晔良，龚仁泰。临床心电图鉴别诊断。南京：江苏科学技术出版社，1999
+
+8.吴晔良，龚仁泰。危重症心电图及临床处理。合肥：安徽科学技术出版社，2003
+
+9.刘尚武，杨成悌。心电图诊断实践指南。北京：人民军医出版社，2007
+
+10.朱力华，方炳森，张文篪。专题心电图精解。天津：天津科学技术出版社，2004
+
+11.耿仁义，朱林中。人工心脏起搏心电图。北京：中国医药科技出版社，2001
+
+12.刘仁光，徐兆龙。跨R波的房室传导。临床心电学杂志，2005，14（2）：81
+
+13.郭继鸿。Osborn波及临床应用意义。临床心电学杂志，1999，8（1）：54
+
+14.马劲林，马业新。致心律失常性右室心肌病/发育不良。中华内科杂志，2000，39（7）：491
+
+15.吴祥，蔡思宇。“巨R型”ST段抬高的特性及其临床意义。中华心血管病杂志，2004，32（8）：762
+
+16.何方田。急性心肌梗死墓碑型ST段抬高的预后意义。浙江医学，2003，25（11）：661
+
+17.吴祥。急性心肌梗死ST段抬高形态的临床意义。心电学杂志，2001，20（3）：189
+
+18.郭继鸿。Niagara瀑布样T波。临床心电学杂志，2001，10（4）：233
+
+19.王立群，郭继鸿。T波交替及T波变异性分析在临床中的应用。心电学杂志，2002，21（4）：239
+
+20.VincentGM，张莉，崔长琮。先天性长QT综合征的QT间期不均一性诊断上的意义。中华心律失常学杂志，2001，5（1）：6
+
+21.方炳森，龚仁泰。Q-T间期缩短的危重症5例报告。心电学杂志，2003，22（2）：89
+
+22.鲁端。短Q-T间期与继发性短Q-T间期综合征。心电学杂志，2008，27（2）：181
+
+23.何方田，尹小妹，李成。短Q-T间期综合征3例。临床心血管病杂志，2007，23（2）：155
+
+24.鲁端。心电图U波的新视野。心电学杂志，2009，28（3）：211
+
+25.何方田。房室旁路性并行心律及加速性逸搏心律2例。临床心血管病杂志，2003，19（3）：176
+
+26.龚仁泰，梁群。旁道心律。心电学杂志，2007，26（1）：56
+
+27.戚文航。心房颤动基础研究和临床治疗中的新视点。中华心血管病杂志，2002，30（10）：577
+
+28.汪康平。心房颤动合并二度房室阻滞的争议。临床心电学杂志，2004，13（1）：2
+
+29.鲁端。心房颤动合并房室传导阻滞的若干认识。心电学杂志，2007，26（2）：186
+
+30.何方田。心房颤动合并三度房室传导阻滞心电图分析。心电学杂志，2000，19（1）：27
+
+31.何方田。心室内折返性心律失常的心电图表现。中华心律失常杂志，2001，5（5）：315
+
+32.何方田。室性早搏伴折返径路内双径路传导的心电图表现。临床心血管病杂志，2001，17（9）：424
+
+33.胡大一。室上性心动过速的研究进展。心电学杂志，2002，21（2）：77
+
+34.赵昜。房性心动过速。心电学杂志，2006，25（3）：179
+
+35.赵昜。文氏现象。心电学杂志，2002，21（2）：123
+
+36.龚仁泰，中文宣。阵发性房室传导阻滞。心电学杂志，2004，23（3）：168
+
+37.刘仁光，郭莲怡。房室传导阻滞心电图分析中应注意的几个问题。心电学杂志，2003，22（4）：210
+
+38.赵昜。多层传导阻滞现象。心电学杂志，2002，21（4）：244
+
+39.何方田。双结病合并房室结双向性三径路传导的心电图表现。中华心血管病杂志，2003，31（5）：382
+
+40.何方田。早搏揭示房室结内多径路传导二例。中国心脏起搏与心电生理杂志，2002，16（5）：397
+
+41.何方田。房室结快径路隐匿性结-窦逆传致假性窦性静止2例。临床心血管病杂志，2002，18（7）：344
+
+42.赵昜。房室传导系统内的多径路传导。心电学杂志，2002，21（2）：52
+
+43.何方田。房性二联律心电图及24h动态心电图分析。浙江医学，2003，25（4）：215
+
+44.汪康平。病态窦房结综合征。心电学杂志，2003，22（4）：198
+
+45.何方田。103例心室停搏的动态心电图分析。浙江医学，2005，27（3）：195
+
+46.郭继鸿。韦金斯基现象。临床心电学，2007，16（1）：57
+
+47.何方田。心源性猝死高危患者的心电图特征。浙江医学，2004，26（4）：246
+
+48.赵昜。隐匿性传导。心电学杂志，2004，23（1）：53
+
+49.赵昜。蝉联现象。心电学杂志，2005，24（1）：52
+
+50.黄织春。容易掩盖急性心肌梗死的几种心电图诊断识别。临床心电学杂志，2006，15（3）：170
+
+51.许原。预激综合征旁道对共存束支传导阻滞心电图的影响。临床心电学杂志，2002，21（1）：49
+
+52.何方田，赵嵘，尹小妹，等。一种心电现象揭示另一种心电现象的若干心电图表现。心电学杂志，2007，26（2）：86
+
+53.张澍。起搏器综合征。中国循环杂志，2000，15（3）：197
+
+54.许原。起搏器介导性心动过速心电图。心电学杂志，2003，22（1）：49
+
+55.刘晓健。起搏器感知功能低下的表现形式。心电学杂志，2005，24（1）：46
+
+56.刘晓健。起搏器起搏功能障碍的心电图表现。心电学杂志，2005，24（2）：111
+
+57.刘晓健。起搏器所致心律失常的表现形式。心电学杂志，2005，24（4）：231
+
+58.刘晓健。起搏器若干特殊功能的心电图表现。心电学杂志，2006，25（1）：47
+
+59.何方田，尹小妹，赵林水。加强起搏心电图诊断中的医-技对话与沟通。心电学杂志，2006，25（4）：232
+
+60.何方田，刘岚，尹小妹。具有特殊功能DDD起搏器的心电图分析。心电学杂志，2008，27（4）：270
+
+61.金华斌，莫丹霞，何方田，等。VVI、DDD起搏器在心房扑动、颤动时容易误诊的心电图表现。心电学杂志，2009，28（2）：88
+
+62.王立群，郭继鸿。起搏模式的自由转换（1）。心电学杂志，2009，28（3）：200
+
+63.郭继鸿。连缀现象。临床心电学杂志，2000，9（1）：52
+
+64.赵昜。心脏电交替现象。心电学杂志，2005，24（2）：116
+
+65.赵昜。拖带现象。心电学杂志，2005，24（3）：184
+
+66.常学伟，魏毅东，张晓晓，等。心电图在诊断急性心肌梗死相关动脉中的价值。临床心电学杂志，2007，16（6）：416
+
+67.刘仁光。心肌缺血与心肌梗死心电图诊断的新概念。临床心电学杂志，2009，18（4）：257
+
+68.郭继鸿。急性冠脉综合征心律失常。临床心电学杂志，2009，18（4）：302
+
+69.高红，王红宇，王瑞英。运动试验变时性与冠心病相关性的研究。临床心电学杂志，2007，16（6）：423
+
+70.郭继鸿。心脏的变时性。临床心电学杂志，2003，12（4）：267
+
+71.鲁端。恶性心室早复极综合征的识别与处理。心电学杂志，2009，28（5）：293
+
+72.何方田，尹小妹。隐匿性传导在心房扑动、颤动时的心电图表现。心电学杂志，2009，28（5）：317
+
+73.唐继志。窦性心律震荡检测技术的临床应用及评价。心电学杂志，2009，28（5）：373
+
+74.赵晖，徐秋萍。心电图在急性肺栓塞诊治中的应用。心电学杂志，2006，25（1）：82
+
+75.赵昜。心室内传导阻滞。心电学杂志，2008，27（4）：298
+
+76.刘仁光，陈亮。宽QRS波群心动过速的鉴别诊断和处理原则。心电学杂志，2002，21（2）：85
+
+77.郭继鸿。宽QRS波群心动过速诊断中无人区心电轴的应用价值。心电学杂志，2007，26（1）：38
+
+78.赵昜。宽QRS波群心动过速。心电学杂志，2008，27（2）：162
+
+79.赵昜。室性心动过速。心电学杂志，2007，26（3）：182
+
+80.赵昜。室性心动过速（续）。心电学杂志，2007，26（4）：244
+
+81.何方田，林洁，尹小妹，等。规范心电图诊断报告。心电学杂志，2007，26（4）：215
+
+
+\end{document}
